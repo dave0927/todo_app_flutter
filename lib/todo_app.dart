@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app_flutter/components/constants.dart';
+import 'package:todo_app_flutter/onboarding_screen.dart';
 
 class TodoApp extends StatelessWidget {
   const TodoApp({super.key});
@@ -6,8 +8,13 @@ class TodoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(),
-      home: const Scaffold(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.from(
+        colorScheme: const ColorScheme.light().copyWith(
+          primary: kPrimaryColor,
+        ),
+      ),
+      home: const OnboardingScreen(),
     );
   }
 }
