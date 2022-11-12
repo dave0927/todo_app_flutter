@@ -5,6 +5,11 @@ import 'package:todo_app_flutter/widgets/page_view_model.dart';
 const kPrimaryColor = Color(0xffffc100);
 const kOnboardingBodyStyle = TextStyle(fontSize: 19);
 
+final kButtonStyle = ElevatedButton.styleFrom(
+  elevation: 0,
+  minimumSize: const Size(double.infinity, 45.0),
+);
+
 const pageDecoration = PageDecoration(
   titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
   bodyTextStyle: kOnboardingBodyStyle,
