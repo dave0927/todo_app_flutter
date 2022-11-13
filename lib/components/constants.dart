@@ -1,19 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:todo_app_flutter/widgets/page_view_model.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 const kPrimaryColor = Color(0xffffc100);
-const kOnboardingBodyStyle = TextStyle(fontSize: 19);
+final kOnboardingBodyStyle = GoogleFonts.redHatDisplay(
+  textStyle: const TextStyle(
+    fontSize: 18,
+    color: Colors.black87,
+  ),
+);
+
+final kAppTitleStyle = GoogleFonts.staatliches(
+  textStyle: const TextStyle(
+    fontSize: 32.0,
+    color: Colors.black54,
+    letterSpacing: 2,
+    fontWeight: FontWeight.w900,
+  ),
+);
 
 final kButtonStyle = ElevatedButton.styleFrom(
   elevation: 0,
   minimumSize: const Size(double.infinity, 45.0),
 );
 
-const pageDecoration = PageDecoration(
-  titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
+final pageDecoration = PageDecoration(
+  titleTextStyle: const TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
   bodyTextStyle: kOnboardingBodyStyle,
-  bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
+  bodyPadding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
   pageColor: Colors.white,
   imagePadding: EdgeInsets.zero,
 );
