@@ -29,7 +29,7 @@ class SignUpButton extends StatelessWidget {
           fontWeight: FontWeight.w700,
         ),
       ),
-      onPressed: () => onTap,
+      onPressed: () => onTap(),
     );
   }
 }
