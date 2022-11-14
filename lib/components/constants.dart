@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:todo_app_flutter/widgets/tab_item.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:todo_app_flutter/widgets/page_view_model.dart';
 import 'package:todo_app_flutter/screens/task%20list/all_items.dart';
@@ -98,9 +97,9 @@ final kOnboardingImages = <PageViewModel>[
 
 final List _tabText = ['All', 'Completed', 'Uncompleted'];
 List<Widget> kBottomSheetTextItems = [
-  TabItem(text: _tabText[0]),
-  TabItem(text: _tabText[1]),
-  TabItem(text: _tabText[2]),
+  Tab(text: _tabText[0]),
+  Tab(text: _tabText[1]),
+  Tab(text: _tabText[2]),
 ];
 
 List<Widget> pages = [
