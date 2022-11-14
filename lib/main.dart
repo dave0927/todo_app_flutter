@@ -18,10 +18,12 @@ void main() async {
     ChangeNotifierProvider(
       create: (context) => GoogleSignInProvider(),
       child: MaterialApp(
+        title: 'ToDoIt',
         debugShowCheckedModeBanner: false,
         theme: ThemeData.from(
           colorScheme: const ColorScheme.light().copyWith(
             primary: kPrimaryColor,
+            secondary: kPrimaryColor,
           ),
         ),
         initialRoute: OnboardingScreen.pageId,
