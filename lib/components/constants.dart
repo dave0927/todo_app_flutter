@@ -1,9 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:todo_app_flutter/widgets/tab_item.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:todo_app_flutter/widgets/page_view_model.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:todo_app_flutter/screens/task%20list/all_items.dart';
+import 'package:todo_app_flutter/screens/task%20list/completed_items.dart';
+import 'package:todo_app_flutter/screens/task%20list/uncompleted_items.dart';
 
 const kPrimaryColor = Color(0xffffc100);
+const kTaskTextStyle =
+    TextStyle(color: Colors.black, fontWeight: FontWeight.bold);
+
+const kSearchInputDecoration = InputDecoration(
+  filled: true,
+  hintText: 'Search a task',
+  fillColor: Color(0xffffffff),
+  enabledBorder: OutlineInputBorder(
+    borderSide: BorderSide(color: Colors.white),
+    borderRadius: BorderRadius.all(Radius.circular(20)),
+  ),
+  contentPadding: EdgeInsets.symmetric(horizontal: 20),
+  focusedBorder: OutlineInputBorder(
+    borderSide: BorderSide(color: Colors.white),
+    borderRadius: BorderRadius.all(Radius.circular(20)),
+  ),
+  suffixIcon: Icon(Icons.search),
+);
+
+const kSearchContainerDecoration = BoxDecoration(
+  color: kPrimaryColor,
+  borderRadius: BorderRadius.only(
+    bottomLeft: Radius.circular(30.0),
+    bottomRight: Radius.circular(30.0),
+  ),
+);
+
 final kOnboardingBodyStyle = GoogleFonts.redHatDisplay(
   textStyle: const TextStyle(
     fontSize: 18,
@@ -63,4 +94,17 @@ final kOnboardingImages = <PageViewModel>[
     'onboarding-3.svg',
     pageDecoration,
   ),
+];
+
+final List _tabText = ['All', 'Completed', 'Uncompleted'];
+List<Widget> kBottomSheetTextItems = [
+  TabItem(text: _tabText[0]),
+  TabItem(text: _tabText[1]),
+  TabItem(text: _tabText[2]),
+];
+
+List<Widget> pages = [
+  const AllItems(),
+  const CompletedItems(),
+  const UncompletedItems(),
 ];
