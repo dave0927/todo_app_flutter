@@ -1,8 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:todo_app_flutter/widgets/actions.dart';
+import 'package:todo_app_flutter/components/constants.dart';
+import 'package:todo_app_flutter/widgets/task/task_list.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
-import 'package:todo_app_flutter/providers/google_sign_in_provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,27 +13,40 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser!;
 
-    return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-              onPressed: () => context.read<GoogleSignInProvider>().logout(),
-              icon: const FaIcon(FontAwesomeIcons.arrowRightFromBracket))
-        ],
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            radius: 40.0,
-            backgroundImage: NetworkImage(user.photoURL!),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.amberAccent.shade100,
+        appBar: AppBar(
+          backgroundColor: kPrimaryColor,
+          elevation: 0,
+          leading: IconButton(
+            onPressed: () {
+              // TODO: toggle theme when the icon pressed
+            },
+            icon: const FaIcon(FontAwesomeIcons.solidLightbulb),
           ),
-          const SizedBox(height: 20.0),
-          Text(user.displayName!),
-          const SizedBox(height: 10.0),
-          Text(user.email!),
-        ],
+          actions: [
+            AppAction(user: user),
+          ],
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.all(20.0),
+                decoration: kSearchContainerDecoration,
+                child: const TextField(
+                  decoration: kSearchInputDecoration,
+                ),
+              ),
+            ),
+            const Expanded(
+              flex: 4,
+              child: TaskList(),
+            ),
+          ],
+        ),
       ),
     );
   }
