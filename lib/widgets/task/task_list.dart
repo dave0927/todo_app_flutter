@@ -9,14 +9,17 @@ class TaskList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        bottomSheet: TabBar(tabs: kBottomSheetTextItems),
-        body: TabBarView(children: pages),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-        floatingActionButton: const AddItem(),
+    return Expanded(
+      flex: 4,
+      child: DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          bottomSheet: TabBar(tabs: kBottomSheetTextItems),
+          body: TabBarView(children: pages),
+          floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+          floatingActionButton: const AddItem(),
+        ),
       ),
     );
   }
