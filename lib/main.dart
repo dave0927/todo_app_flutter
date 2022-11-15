@@ -27,12 +27,7 @@ void main() async {
           ),
         ),
         initialRoute: OnboardingScreen.pageId,
-        routes: {
-          OnboardingScreen.pageId: (context) => const OnboardingScreen(),
-          RegistrationPage.pageId: (context) => const RegistrationPage(),
-          HomePage.pageId: (context) => const HomePage(),
-          TodoApp.pageId: (context) => const TodoApp(),
-        },
+        routes: kAppPageRoutes,
       ),
     ),
   );

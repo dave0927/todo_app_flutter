@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:todo_app_flutter/onboarding_screen.dart';
+import 'package:todo_app_flutter/screens/home.dart';
+import 'package:todo_app_flutter/screens/registration.dart';
+import 'package:todo_app_flutter/todo_app.dart';
 import 'package:todo_app_flutter/widgets/page_view_model.dart';
 import 'package:todo_app_flutter/screens/task%20list/all_items.dart';
 import 'package:todo_app_flutter/screens/task%20list/completed_items.dart';
@@ -9,6 +13,13 @@ import 'package:todo_app_flutter/screens/task%20list/uncompleted_items.dart';
 const kPrimaryColor = Color(0xffffc100);
 const kTaskTextStyle =
     TextStyle(color: Colors.black, fontWeight: FontWeight.bold);
+
+final kAppPageRoutes = <String, Widget Function(BuildContext)>{
+  OnboardingScreen.pageId: (BuildContext context) => const OnboardingScreen(),
+  RegistrationPage.pageId: (BuildContext context) => const RegistrationPage(),
+  HomePage.pageId: (BuildContext context) => const HomePage(),
+  TodoApp.pageId: (BuildContext context) => const TodoApp(),
+};
 
 const kSearchInputDecoration = InputDecoration(
   filled: true,
