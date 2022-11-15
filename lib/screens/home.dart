@@ -25,26 +25,19 @@ class HomePage extends StatelessWidget {
             },
             icon: const FaIcon(FontAwesomeIcons.solidLightbulb),
           ),
-          actions: [
-            AppAction(user: user),
-          ],
+          actions: [AppAction(user: user)],
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
-              child: Container(
-                padding: const EdgeInsets.all(20.0),
-                decoration: kSearchContainerDecoration,
-                child: const TextField(
-                  decoration: kSearchInputDecoration,
-                ),
+            Container(
+              padding: const EdgeInsets.all(20.0),
+              decoration: kSearchContainerDecoration,
+              child: const TextField(
+                decoration: kSearchInputDecoration,
               ),
             ),
-            const Expanded(
-              flex: 4,
-              child: TaskList(),
-            ),
+            const TaskList(),
           ],
         ),
       ),
