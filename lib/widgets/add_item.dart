@@ -8,17 +8,14 @@ class AddItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(bottom: 40.0),
-      child: FloatingActionButton.small(
-        child: const FaIcon(
-          FontAwesomeIcons.plus,
-          color: Colors.white,
-        ),
-        onPressed: () {
-          // TODO: add task callback
-        },
+    return FloatingActionButton.small(
+      child: const FaIcon(
+        FontAwesomeIcons.plus,
+        color: Colors.white,
       ),
+      onPressed: () {
+        // TODO: add task callback
+      },
     );
   }
 }
