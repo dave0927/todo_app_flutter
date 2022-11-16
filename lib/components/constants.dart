@@ -45,6 +45,13 @@ const kSearchContainerDecoration = BoxDecoration(
   ),
 );
 
+const kAddTaskContainerDecoration = BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.only(
+      topLeft: Radius.circular(20.0),
+      topRight: Radius.circular(20.0),
+    ));
+
 final kOnboardingBodyStyle = GoogleFonts.redHatDisplay(
   textStyle: const TextStyle(
     fontSize: 18,
