@@ -11,8 +11,14 @@ import 'package:todo_app_flutter/screens/task%20list/completed_items.dart';
 import 'package:todo_app_flutter/screens/task%20list/uncompleted_items.dart';
 
 const kPrimaryColor = Color(0xffffc100);
-const kTaskTextStyle =
-    TextStyle(color: Colors.black, fontWeight: FontWeight.bold);
+const kTaskTextStyle = TextStyle(
+  color: Colors.black,
+  fontWeight: FontWeight.w600,
+);
+
+final kTaskDoneTextStyle = kTaskTextStyle.copyWith(
+  decoration: TextDecoration.lineThrough,
+);
 
 final kAppPageRoutes = <String, Widget Function(BuildContext)>{
   OnboardingScreen.pageId: (BuildContext context) => const OnboardingScreen(),
