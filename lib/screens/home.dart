@@ -21,9 +21,9 @@ class HomePage extends StatelessWidget {
           elevation: 0,
           leading: IconButton(
             onPressed: () {
-              // TODO: toggle theme when the icon pressed
+              // TODO: sync task data to the cloud DB
             },
-            icon: const FaIcon(FontAwesomeIcons.solidLightbulb),
+            icon: const FaIcon(FontAwesomeIcons.cloudArrowUp),
           ),
           actions: [AppAction(user: user)],
         ),
