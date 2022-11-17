@@ -11,7 +11,7 @@ class AppAction extends StatelessWidget {
     return Row(
       children: [
         Text(
-          user.displayName!,
+          user.displayName ?? 'Guest',
           style: kOnboardingBodyStyle.copyWith(
             color: Colors.white,
             fontWeight: FontWeight.w800,
@@ -23,9 +23,13 @@ class AppAction extends StatelessWidget {
             onTap: () {
               //TODO: logout and other options
             },
-            child: CircleAvatar(
-              backgroundImage: NetworkImage(user.photoURL!),
-            ),
+            child: user.photoURL == null
+                ? const CircleAvatar(
+                    child: Icon(Icons.person_rounded),
+                  )
+                : CircleAvatar(
+                    backgroundImage: NetworkImage(user.photoURL!),
+                  ),
           ),
         ),
       ],
