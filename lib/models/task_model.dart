@@ -3,7 +3,7 @@ import 'dart:convert';
 class Task {
   String text;
   bool isDone;
-  final String scheduledDate;
+  String scheduledDate;
   Task({
     required this.text,
     this.isDone = false,
