@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignUpButton extends StatelessWidget {
   const SignUpButton({
@@ -19,7 +18,7 @@ class SignUpButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
       style: buttonStyle,
-      icon: FaIcon(
+      icon: Icon(
         buttonChildIcon,
         size: 18.0,
       ),
