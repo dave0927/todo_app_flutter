@@ -19,6 +19,7 @@ void main() async {
         ChangeNotifierProvider(create: (context) => TaskData()),
       ],
       child: MaterialApp(
+        locale: const Locale('Et'),
         title: 'ToDoIt',
         debugShowCheckedModeBanner: false,
         theme: ThemeData.from(
